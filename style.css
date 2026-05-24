@@ -1,0 +1,653 @@
+/* ========================= */
+/* GOOGLE FONT */
+/* ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ========================= */
+/* ROOT VARIABLES */
+/* ========================= */
+:root {
+    --primary: #00e5ff;
+    --primary-dark: #0097a7;
+    --dark: #0f172a;
+    --dark-light: #1e293b;
+    --glass: rgba(255,255,255,0.06);
+    --text-light: #cbd5e1;
+}
+
+/* ========================= */
+/* GLOBAL RESET */
+/* ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #0c4a6e, #0f172a);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Background Animation */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 80px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-left: 35px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    transition: 0.4s ease;
+}
+
+.navbar a:hover {
+    color: var(--primary);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* ========================= */
+/* SECTION */
+/* ========================= */
+.section {
+    padding: 100px 120px;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.hero-text p {
+    margin-top: 20px;
+    color: var(--text-light);
+    font-size: 18px;
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    border-radius: 40px;
+    background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s;
+    box-shadow: 0 8px 25px rgba(0,229,255,0.4);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,229,255,0.6);
+}
+
+/* ========================= */
+/* GRID */
+/* ========================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+.card {
+    background: var(--glass);
+    padding: 35px;
+    border-radius: 18px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,229,255,0.25);
+}
+
+/* ========================= */
+/* CONTACT FORM */
+/* ========================= */
+.contact-form {
+    max-width: 650px;
+    margin: 40px auto;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(0,229,255,0.4);
+}
+
+.input-box textarea {
+    min-height: 150px;
+    resize: none;
+}
+
+.input-box label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: #aaa;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label,
+.input-box textarea:focus ~ label,
+.input-box textarea:valid ~ label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--primary);
+    background: var(--dark);
+    padding: 0 6px;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(0,0,0,0.6);
+    margin-top: 100px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* ========================= */
+/* FLOATING WHATSAPP */
+/* ========================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    padding: 15px 18px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .navbar ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 15px;
+    }
+
+    .section {
+        padding: 60px 25px;
+    }
+
+    .hero-text h1 {
+        font-size: 34px;
+    }
+}
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('images/plastic-bg.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* Normal Button */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
+}
+/* CONTACT SECTION */
+.contact-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    text-align: center;
+    color: white;
+}
+
+.contact-section h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* FORM BOX */
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+/* INPUT BOX */
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    outline: none;
+    font-size: 16px;
+}
+
+.input-box textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* LABEL ANIMATION */
+.input-box label {
+    position: absolute;
+    left: 0;
+    top: 12px;
+    transition: 0.3s;
+    pointer-events: none;
+    color: #ccc;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label,
+.input-box textarea:focus + label,
+.input-box textarea:valid + label {
+    top: -15px;
+    font-size: 14px;
+    color: #00c6ff;
+}
+
+/* SEND BUTTON */
+.btn {
+    padding: 12px 30px;
+    border: none;
+    background: #00c6ff;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0072ff;
+    transform: scale(1.05);
+}
+
+/* WHATSAPP SECTION */
+.whatsapp-contact {
+    margin-top: 40px;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 25px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
+}
+/* PRODUCTS SECTION */
+.products-section {
+    padding: 80px 20px;
+    background: #f4f7fa;
+    text-align: center;
+}
+
+.products-section h1 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #222;
+}
+
+/* GRID */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* CARD */
+.product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    padding: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* HOVER EFFECT */
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Only Plastic P Roll Pipes Image Styling */
+.rollpipe-card img {
+    height: 260px;          /* thodi badi image */
+    object-fit: contain;    /* pura roll pipe show hoga crop nahi hoga */
+    padding: 15px;
+    background: #ffffff;
+}
+
+/* Premium Hover Effect */
+.rollpipe-card:hover img {
+    transform: scale(1.08);
+    transition: 0.4s ease;
+}
+/* Plastic Imported Bags Special Styling */
+.bags-card img {
+    height: 250px;          /* balanced size */
+    object-fit: contain;    /* full bag visible */
+    padding: 18px;
+    background: #ffffff;
+}
+
+/* Smooth Hover Zoom */
+.bags-card:hover img {
+    transform: scale(1.08);
+    transition: 0.4s ease;
+}
+
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .products-section h1 {
+        font-size: 28px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+}
+
+/* ===== HERO RIGHT LOGO CONTAINER ===== */
+.hero-logo-right {
+    position: absolute;
+    top: 110px;
+    right: 60px;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 40px 60px;
+    width: 100%;
+}
+
+/* ===== CIRCLE LOGO ===== */
+.logo-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background: radial-gradient(circle at top left, #111, #000);
+
+    border: 3px solid rgba(74, 163, 255, 0.8);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.6),
+        inset 0 0 15px rgba(255,255,255,0.05);
+
+    transition: 0.3s ease;
+}
+
+/* ===== GLOW EFFECT ===== */
+.logo-circle::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #4da3ff,
+        #ffffff,
+        #1e90ff,
+        #4da3ff
+    );
+    animation: rotateGlow 5s linear infinite;
+    z-index: 0;
+}
+
+/* ===== INNER MASK FIX (UPDATED) ===== */
+.logo-circle::after {
+    content: "";
+    position: absolute;
+    inset: 6px;   /* FIXED */
+    border-radius: 50%;
+    background: radial-gradient(circle at top left, #111, #000);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===== IMAGE FIX (IMPORTANT) ===== */
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* FIX: proper circle fill */
+    border-radius: 50%;  /* FIX: force circular crop */
+    position: relative;
+    z-index: 2;
+    display: block;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.6));
+}
+
+/* ===== HOVER EFFECT ===== */
+.logo-circle:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.75),
+        inset 0 0 20px rgba(255,255,255,0.08);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-logo-right {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .logo-circle {
+        width: 150px;
+        height: 150px;
+    }
+}

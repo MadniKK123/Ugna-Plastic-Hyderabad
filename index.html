@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plastic Bottle Manufacturing Company</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+
+    
+    
+
+
+
+
+    <h2 class="logo">UGNA PLASTIC HYDERABAD</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section hero">
+
+<div class="hero-logo-right">
+    <div class="logo-circle">
+        <img src="./images/logo.jpg" alt="UGNA Plastic Logo">
+    </div>
+</div>
+    
+    
+
+
+
+
+
+
+
+    <div class="hero-text">
+        <h1>High Quality Plastic Bottle Manufacturing</h1>
+        <p>We manufacture PET, HDPE, Dropper & Injection bottles with premium quality standards.</p>
+        
+        <a href="#contact" class="btn">Request a Quote</a>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/923153858114" target="_blank" class="whatsapp-btn">
+            💬 Chat on WhatsApp
+        </a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h1>About Our Company</h1>
+    <p>Ugna Plastic Hyderabad was established in April 2024. Ugna Plastic is the top suppliers and manufacturers of empty plastic Lubricants bottles using HDPE/LDPE/PPR material and manufacturing Injection medicine empty bottles and P Pipes in Hyderabad, Pakistan.</p>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="section products-section">
+    <h1>Our Products</h1>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="./images/pet.jpg" alt="PET Bottle">
+            <h3>PET Bottles</h3>
+        </div>
+
+        <div class="product-card">
+            <img src="./images/HDPE.jpg" alt="HDPE Bottle">
+            <h3>HDPE Bottles</h3>
+        </div>
+
+        <div class="product-card">
+            <img src="./images/dropper.jpg" alt="Dropper Bottle">
+            <h3>Dropper Bottles</h3>
+        </div>
+
+        <div class="product-card">
+            <img src="./images/injection.jpg" alt="Injection Bottle">
+            <h3>Injection Bottles</h3>
+        </div>
+
+        <div class="product-card">
+            <img src="./images/caps.jpg" alt="Caps and Closures">
+            <h3>Caps & Closures</h3>
+        </div>
+        <div class="product-card">
+            <img src="./images/pipe.jpg" alt="P Pipes">
+            <h3>P Pipes</h3>
+        </div>
+        <div class="product-card rollpipe-card">
+    <img src="./images/P roll.jpg" alt="Plastic P Roll Pipes">
+    <h3>Plastic P Roll Pipes</h3>
+    </div>
+     <div class="product-card bags-card">
+    <img src="./images/plastic.jpg" alt="Plastic Imported Bags">
+    <h3>Plastic Imported Bags</h3>
+</div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+    <h1>Our Services</h1>
+    <div class="grid">
+        <div class="card">Custom Mold Design</div>
+        <div class="card">Bulk Production</div>
+        <div class="card">Quality Testing</div>
+        <div class="card">Fast Delivery</div>
+    </div>
+</section>
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+    <h1>Contact Us</h1>
+
+    <form class="contact-form" onsubmit="sendToWhatsApp(); return false;">
+        <div class="input-box">
+            <input type="text" id="name" required>
+            <label>Name</label>
+        </div>
+
+        <div class="input-box">
+            <input type="email" id="email" required>
+            <label>Email</label>
+        </div>
+
+        <div class="input-box">
+            <textarea id="message" required></textarea>
+            <label>Message</label>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+
+<script>
+function sendToWhatsApp() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    var phoneNumber = "923153858114";
+
+    var url = "https://api.whatsapp.com/send?phone=" + phoneNumber +
+              "&text=Name: " + encodeURIComponent(name) +
+              "%0AEmail: " + encodeURIComponent(email) +
+              "%0AMessage: " + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+</script>
+
+
+
+    <!-- WhatsApp Direct Button -->
+    <div class="whatsapp-contact">
+        <p>Or contact us directly on WhatsApp</p>
+        <a href="https://wa.me/923153858114" target="_blank" class="whatsapp-btn">
+            💬 Chat on WhatsApp
+        </a>
+    </div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+    © 2026 PlasticCo. All Rights Reserved.
+</footer>
+
+</body>
+</html>
